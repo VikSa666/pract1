@@ -7,11 +7,12 @@ El programa es compon de quatre fitxers d'extensió ***.c**. El principal és [`
 ### Fitxer ```itMethods.h```
 En aquest fitxer hi són principalment les funcions dels mètodes iteratius estudiats. El primer és Jacobi, el segon és Gauss-Seidel i el tercer és SOR. Com que Gauss-Seidel és un cas particular de SOR amb _w = 1_ el que he fet ha estat cridar a SOR passant manualment _w = 1_ per estalviar codi.
 
-1. **Jacobi**. Per treballar amb Jacobi cal fer una matriu auxiliar, que anomeno _xx_, per guardar cada iteració i, abans de reemplaçar-les a la meva matriu del sistema _A_, calcular la diferència entre _xx_ i la _A_ corresponent a la iteració anterior. D'aquesta manera podem saber quan el mètode convergeix i sortir-ne. 
-    
-Llavors, per a aqueta matriu _xx_ guardo espai i després li defineixo ``la frontera'' igual que la _A_. Després faig el mètode guardant la iteració a _xx_, calculo la diferència, miro si he de sortir ja o encara no, i aleshores escric la nova iteració a _A_.
+1. **Jacobi**. Per treballar amb Jacobi cal fer una matriu auxiliar, que anomeno _xx_, per guardar cada iteració i, abans de reemplaçar-les a la meva matriu del sistema _A_, calcular la diferència entre _xx_ i la _A_ corresponent a la iteració anterior. D'aquesta manera podem saber quan el mètode convergeix i sortir-ne. Llavors, per a aqueta matriu _xx_ guardo espai i després li defineixo "la frontera" igual que la _A_. Després faig el mètode guardant la iteració a _xx_, calculo la diferència, miro si he de sortir ja o encara no, i aleshores escric la nova iteració a _A_.
+
 2. **SOR**. Similar a Jacobi, però no cal guardar tota una matriu auxiliar per calcular l'error en cada iteració, només un paràmetre que anomeno ```error```.
+
 3. **Gauss-Seidel**. És el mètode de SOR però amb _w = 1_.
+
 4. **Gradients Conjugats**. Aquest mètode el baso en les fórmules proporcionades a la teoria. El que passa és que, en un moment determinat, necessito un "vector" auxiliar i, per això, defineixo un vector _q_ que teòricament no apareix a les fórmules. 
     
 Per a definir els vectors he fet com si fossin matrius _n x n_, en comptes de vectors de dimensió _n^2_, la qual cosa és el mateix en realitat. Però d'aquesta manera, adaptant algunes funcions que he posat a l'arxiu ```mave.h```, és més simple el càlcul. 
