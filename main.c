@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /* 
  * File:   main.c
  * Author: victorsantiagoblanco
@@ -23,17 +17,14 @@ int main(void) {
     int i, j, k=0, n, iter_num, option;
     double **A,*b, *x, tol, h, w;
     
-    
     // Llegim paràmetres 
     printf("Dimensió:");
     scanf("%d", &n);
     printf("La w per SOR:");
     scanf("%le", &w);
-
     
     // Guardem memòria, comptant amb la frontera també (per això n+2). 
     A = store_matrix(n+2, n+2);
-    
     
     // Definim la h = 1/(N+1) 
     h = 1./(n+1);
@@ -62,7 +53,7 @@ void executar_funcions(double **A, double tol, int n, double h, double w, int op
     double t, begin_t, end_t;
     int iter_num;
 
-    printf("\n--------- Executant mètodes amb n = %d i tol = %.2le-----------------\n", n, tol);
+    printf("\n--------- Executant mètodes amb n = %d i tol = %.2le -------------\n", n, tol);
     
     // Fem Jacobi 
     omplir_zeros(n+2,A);
