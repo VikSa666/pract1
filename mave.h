@@ -1,3 +1,12 @@
+/* 
+ * File: mave.h
+ * Author: Víctor Santiago Blanco
+ * NIUB: 20046541
+ * GitHub: https://github.com/VikSa666/pract1
+ *
+ * Created on 27 de septiembre de 2021, 12:36
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
@@ -71,7 +80,7 @@ double producte_escalar_vectors_matriu(double **u, double **v, int n) {
     int i, j;
     double prod = 0.;
 
-    for(i = 0; i < n; i++) for(j = 0; j < n; j++) prod += u[i][j]*v[i][j];
+    for(j = 0; j < n; j++) for(i = 0; i < n; i++) prod += u[i][j]*v[i][j];
     return prod;
 }
 

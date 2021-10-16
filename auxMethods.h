@@ -1,10 +1,15 @@
+/* 
+ * File: itMethods.h
+ * Author: Víctor Santiago Blanco
+ * NIUB: 20046541
+ * GitHub: https://github.com/VikSa666/pract1
+ *
+ * Created on 21 de septiembre de 2021, 21:12
+ */
+
 /*
  * Funcions auxiliars que poden ser útils per a fer els mètodes iteratius,
  * com ara per exemple un que inicialitza la matriu.
- * 
- * NOTA: moltes d'aquestes funcions són reutilitzades d'altres programes
- * de Mètodes Numèrics II. Amb la qual cosa, potser hi ha funcions que no
- * utilitzaré.
  */
 
 

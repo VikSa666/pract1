@@ -8,6 +8,15 @@
 
 
 #include <stdio.h>
+/* 
+ * File: functions.h
+ * Author: Víctor Santiago Blanco
+ * NIUB: 20046541
+ * GitHub: https://github.com/VikSa666/pract1
+ *
+ * Created on 21 de septiembre de 2021, 21:12
+ */
+
 #include <stdlib.h>
 #include <math.h>
 

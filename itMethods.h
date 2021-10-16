@@ -1,6 +1,10 @@
-/*
- * Mètodes iteratius com Jacobi o SOR
- * 
+/* 
+ * File: itMethods.h
+ * Author: Víctor Santiago Blanco
+ * NIUB: 20046541
+ * GitHub: https://github.com/VikSa666/pract1
+ *
+ * Created on 21 de septiembre de 2021, 21:12
  */
 
 
@@ -86,8 +90,8 @@ int metode_gradients_conjugats(double **A, double tol, int n, double h, int opti
         
 	producte_metodes(A, r, n); /* Guardo A·r en r */
 	/* Iteració nº 0: */
-    for(i = 1; i < n+1; i++) {
-		for(j = 1; j < n+1; j++) {
+    for(j = 1; j < n+1; j++) {
+		for(i = 1; i < n+1; i++) {
 			r[i][j] = h*h*f(h*i,h*j, option) - r[i][j];
 			p[i][j] = r[i][j]; 
 		}
@@ -100,8 +104,8 @@ int metode_gradients_conjugats(double **A, double tol, int n, double h, int opti
 		alpha = (-1.*norma_pre)/producte_escalar_vectors_matriu(p, q, n+2); /* p^T·A·p en el denominador. */
 
         /* Actualitzem els valors de A i de r en la iteració k+1 */
-		for(i = 1; i < n+1; i++) {
-			for(j = 1; j < n+1; j++) {
+		for(j = 1; j < n+1; j++) {
+			for(i = 1; i < n+1; i++) {
 				A[i][j] -= alpha*p[i][j];
 				r[i][j] += alpha*q[i][j];
 			}
@@ -116,8 +120,7 @@ int metode_gradients_conjugats(double **A, double tol, int n, double h, int opti
 				p[i][j] = r[i][j] + beta*p[i][j];
 
 		it_num++; /* Acumulem el número d'iteracions. */
-	}
-	while(norma_post >= tol*tol); /* Condició de sortida del propi mètode. */
+	} while(norma_post >= tol*tol); /* Condició de sortida del propi mètode. */
 
 	return it_num;
 }
