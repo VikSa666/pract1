@@ -33,7 +33,9 @@ Conté les funcions _f_ i _g_ per a cada exercici. Mitjançant el paràmetre ```
 
 
 ### Fitxer ```main.c```
-Implementació del programa: llegim paràmetres dimensió i tolerància, guardem memòria, definim el pas de malla i la frontera i implementem els mètodes. He posat uns paràmetres temporals per mesurar quant de temps triga cada mètode i així poder comparar-los.
+Implementació del programa: llegim paràmetres dimensió i tolerància, guardem memòria, definim el pas de malla i la frontera i implementem els mètodes. He posat uns paràmetres temporals per mesurar quant de temps triga cada mètode i així poder comparar-los. 
+
+**Nota important** He hagut d'afegir un ```if``` per controlar que la dimensió no fos massa gran, ja que sinó per fer els tres primers mètodes, l'ordinador pot trigar dies sencers. Aleshores els he executat dins d'un ```if``` que controla que no sigui massa gran. Així, per exemple, a l'exercici on demana que _N = 999_, no executarà aquests tres mètodes.
 
 
 ## Resultats

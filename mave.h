@@ -80,7 +80,7 @@ double producte_escalar_vectors_matriu(double **u, double **v, int n) {
     int i, j;
     double prod = 0.;
 
-    for(j = 0; j < n; j++) for(i = 0; i < n; i++) prod += u[i][j]*v[i][j];
+    for(i = 0; i < n; i++) for(j = 0; j < n; j++) prod += u[i][j]*v[i][j];
     return prod;
 }
 

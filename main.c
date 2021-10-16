@@ -8,8 +8,10 @@
  */
 
 
+// loquequieras
+// lo que quieras 2
 
-// asdfohjasdpfias dmgfwhbdk
+// asdfohjasdpfias dmgfwhb
 
 #include <time.h>
 #include "itMethods.h"
@@ -61,44 +63,46 @@ void executar_funcions(double **A, double tol, int n, double h, double w, int op
 
     printf("\n--------- Executant mètodes amb n = %d i tol = %.2le -------------\n", n, tol);
     
-    // // Fem Jacobi 
-    // omplir_zeros(n+2,A);
-    // begin_t = clock();
-    // valors_frontera(A, n, h, option);
-    // iter_num = metode_jacobi(n, A, tol, h, option);
-    // end_t = clock();
-    // t = (end_t-begin_t)/CLOCKS_PER_SEC;
-    // printf("\nJACOBI:\n");
-    // printf("El mètode de Jacobi ha estat implementat amb tolerància %.2le i amb els següents resultats:\n", tol);
-    // printf("Iteracions: %d.\n", iter_num);
-    // printf("Error real: %le.\n", error(A,n+2, h, option));
-    // printf("Temps: %f segons\n", t);
-    
-    // // Fem Gauss-Seidel 
-    // omplir_zeros(n+2,A);
-    // valors_frontera(A, n, h, option);
-    // begin_t = clock();
-    // iter_num = metode_gauss_seidel(n, A, tol, option, h);
-    // end_t = clock();
-    // t = (end_t-begin_t)/CLOCKS_PER_SEC;
-    // printf("\nGAUSS-SEIDEL:\n");
-    // printf("El mètode de Gauss-Seidel ha estat implementat amb tolerància %.2le i amb els següents resultats:\n", tol);
-    // printf("Iteracions: %d.\n", iter_num);
-    // printf("Error real: %le.\n", error(A,n+2, h, option));
-    // printf("Temps: %f segons\n", t);
-    
-    // // Fem SOR
-    // omplir_zeros(n+2,A);
-    // valors_frontera(A, n, h, option);
-    // begin_t = clock();
-    // iter_num = metode_sor(n, A,tol,option, w, h);
-    // end_t = clock();
-    // t = (end_t-begin_t)/CLOCKS_PER_SEC;
-    // printf("\nSOR:\n");
-    // printf("El mètode de SOR ha estat implementat amb tolerància %.2le, w = %.2le i amb els següents resultats:\n", tol, w);
-    // printf("Iteracions: %d.\n", iter_num);
-    // printf("Error real: %le.\n", error(A,n+2, h, option));
-    // printf("Temps: %f segons\n", t);
+    if(n < 250) {
+        // Fem Jacobi 
+        omplir_zeros(n+2,A);
+        begin_t = clock();
+        valors_frontera(A, n, h, option);
+        iter_num = metode_jacobi(n, A, tol, h, option);
+        end_t = clock();
+        t = (end_t-begin_t)/CLOCKS_PER_SEC;
+        printf("\nJACOBI:\n");
+        printf("El mètode de Jacobi ha estat implementat amb tolerància %.2le i amb els següents resultats:\n", tol);
+        printf("Iteracions: %d.\n", iter_num);
+        printf("Error real: %le.\n", error(A,n+2, h, option));
+        printf("Temps: %f segons\n", t);
+        
+        // Fem Gauss-Seidel 
+        omplir_zeros(n+2,A);
+        valors_frontera(A, n, h, option);
+        begin_t = clock();
+        iter_num = metode_gauss_seidel(n, A, tol, option, h);
+        end_t = clock();
+        t = (end_t-begin_t)/CLOCKS_PER_SEC;
+        printf("\nGAUSS-SEIDEL:\n");
+        printf("El mètode de Gauss-Seidel ha estat implementat amb tolerància %.2le i amb els següents resultats:\n", tol);
+        printf("Iteracions: %d.\n", iter_num);
+        printf("Error real: %le.\n", error(A,n+2, h, option));
+        printf("Temps: %f segons\n", t);
+        
+        // Fem SOR
+        omplir_zeros(n+2,A);
+        valors_frontera(A, n, h, option);
+        begin_t = clock();
+        iter_num = metode_sor(n, A,tol,option, w, h);
+        end_t = clock();
+        t = (end_t-begin_t)/CLOCKS_PER_SEC;
+        printf("\nSOR:\n");
+        printf("El mètode de SOR ha estat implementat amb tolerància %.2le, w = %.2le i amb els següents resultats:\n", tol, w);
+        printf("Iteracions: %d.\n", iter_num);
+        printf("Error real: %le.\n", error(A,n+2, h, option));
+        printf("Temps: %f segons\n", t);
+    }
 
     // Fem gradient conjugat
     omplir_zeros(n+2,A);
