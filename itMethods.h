@@ -90,8 +90,8 @@ int metode_gradients_conjugats(double **A, double tol, int n, double h, int opti
         
 	producte_metodes(A, r, n); /* Guardo A·r en r */
 	/* Iteració nº 0: */
-    for(j = 1; j < n+1; j++) {
-		for(i = 1; i < n+1; i++) {
+    for(i = 1; i < n+1; i++) {
+		for(j = 1; j < n+1; j++) {
 			r[i][j] = h*h*f(h*i,h*j, option) - r[i][j];
 			p[i][j] = r[i][j]; 
 		}
@@ -104,8 +104,8 @@ int metode_gradients_conjugats(double **A, double tol, int n, double h, int opti
 		alpha = (-1.*norma_pre)/producte_escalar_vectors_matriu(p, q, n+2); /* p^T·A·p en el denominador. */
 
         /* Actualitzem els valors de A i de r en la iteració k+1 */
-		for(j = 1; j < n+1; j++) {
-			for(i = 1; i < n+1; i++) {
+		for(i = 1; i < n+1; i++) {
+			for(j = 1; j < n+1; j++) {
 				A[i][j] -= alpha*p[i][j];
 				r[i][j] += alpha*q[i][j];
 			}
